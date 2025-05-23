@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PHP Basic BookStore Website (For Study Purpose Only)
 This BookStore Website is using PHP and Database(MySQL). In this website you can Register and Edit Profile.
 And also all the book data will store at the database for easy to add, edit and delete.
@@ -14,3 +15,7 @@ Download [bookstore](https://github.com/weixiong15/PHP_Basic_BookStore_Website/t
 [XAMPP](https://www.apachefriends.org/index.html) or other. After, you need to import [database.sql](https://github.com/weixiong15/PHP_Basic_BookStore_Website/blob/master/bookstore/database.sql) to your server/XAMPP 
 first.
  
+=======
+# PHP-Bookstore-Website-Example
+using Docker
+>>>>>>> 9ac5cbe59e127861e92ea7c135b1a5f7bd7f753e
