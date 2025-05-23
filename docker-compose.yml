@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    container_name: php-bookstore
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=bookstore
+
+  db:
+    image: mysql:5.7
+    container_name: mysql-bookstore
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: bookstore
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
