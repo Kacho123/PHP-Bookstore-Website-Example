@@ -1,17 +1,18 @@
-# Use official PHP + Apache image
+# Base image: PHP 8.1 with Apache
 FROM php:8.1-apache
 
-# Install required PHP extensions
+# Install mysqli extension (for MySQL)
 RUN docker-php-ext-install mysqli
 
-# Enable Apache mod_rewrite (important for many PHP apps)
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Copy app source code to /var/www/html
+# Copy project files into Apache directory
 COPY . /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Change ownership (optional, for permission issues)
+# Set file permissions (optional, useful for uploads etc.)
 RUN chown -R www-data:www-data /var/www/html
+
